@@ -1,0 +1,111 @@
+{
+  "name": "ninja-sphere",
+  "version": "0.0.13",
+  "description": "The base Ninja Sphere library, used to create apps and drivers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ninja Blocks <support@ninjablocks.com>",
+  "contributors": [
+    "Elliot Shepherd <elliot@ninjablocks.com>"
+  ],
+  "dependencies": {
+    "addTimeout": "~0.4.0",
+    "bugsnag": "^1.3.2",
+    "checksum": "~0.1.1",
+    "colors": "~0.6.2",
+    "eventemitter2": "^0.4.13",
+    "flat": "^1.2.1",
+    "houkou": "^0.2.1",
+    "log4js": "~0.6.9",
+    "memwatch": "~0.2.2",
+    "merge": "^1.1.3",
+    "mqtt": "~0.3.7",
+    "optimist": "~0.6.1",
+    "pkginfo": "~0.3.0",
+    "sphere-schemas": "^1.0.8",
+    "tv4": "^1.0.18",
+    "underscore": "^1.6.0",
+    "when": "^3.2.3",
+    "weak": "^0.3.3"
+  },
+  "devDependencies": {
+    "node-uuid": "^1.4.1"
+  },
+  "topics": {
+    "app": {
+      "service": "$node/:node/app/:app",
+      "message": "$node/:node/app/:app/message",
+      "event": "$node/:node/app/:app/event/:event"
+    },
+    "driver": {
+      "service": "$node/:node/driver/:app",
+      "event": "$node/:node/driver/:app/event/:event"
+    },
+    "device": {
+      "announce": "$device/:device/announce",
+      "channel": {
+        "announce": "$device/:device/channel/:channel/announce",
+        "service": "$device/:device/channel/:channel",
+        "event": "$device/:device/channel/:channel/event/:event"
+      }
+    },
+    "thing": {
+      "announce": "$thing/:thing/announce",
+      "location": "$thing/:thing/location",
+      "goodbye": "$thing/:thing/goodbye"
+    },
+    "module": {
+      "available": "$node/:node/module/available",
+      "status": "$node/:node/module/status",
+      "start": "$node/:node/module/start",
+      "stop": "$node/:node/module/stop",
+      "restart": "$node/:node/module/restart"
+    },
+    "site": {
+      "change": "$site/change"
+    },
+    "room": {
+      "announce": "$room/:room/announce",
+      "goodbye": "$room/:room/goodbye"
+    },
+    "bridge": {
+      "connect": "$sphere/bridge/connect",
+      "status": "$sphere/bridge/status",
+      "disconnect": "$sphere/bridge/disconnect"
+    },
+    "location": {
+      "calibration": {
+        "delete": "$location/delete",
+        "calibrate": "$location/calibration",
+        "progress": "$location/calibration/progress"
+      }
+    },
+    "status": {
+      "power": "$hardware/status/power",
+      "wired_internet": "$hardware/status/wired_internet",
+      "wireless": "$hardware/status/wireless",
+      "pairing": "$hardware/status/pairing",
+      "radio": "$hardware/status/radio",
+      "reset": "$hardware/status/reset"
+    },
+    "services": {
+      "timeseries": "$ninja/services/timeseries"
+    }
+  },
+  "services": {
+    "RoomModel": {
+      "topic": "$home/services/RoomModel",
+      "schema": "/service/room-model"
+    },
+    "ThingModel": {
+      "topic": "$home/services/ThingModel",
+      "schema": "/service/thing-model"
+    },
+    "DeviceModel": {
+      "topic": "$home/services/DeviceModel",
+      "schema": "/service/device-model"
+    }
+  }
+}

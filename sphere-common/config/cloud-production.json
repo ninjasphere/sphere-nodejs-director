@@ -1,0 +1,8 @@
+{
+  "cloud": {
+    "url": "ssl://mqtt.sphere.ninja:8883",
+    "activation": "https://api.sphere.ninja/rest/v1/node/%s/activate?local_ip=%s&board_type=%s",
+    "allowSelfSigned": false
+  },
+  "enableCors": false
+}

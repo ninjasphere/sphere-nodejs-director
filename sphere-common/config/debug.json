@@ -1,0 +1,12 @@
+{
+  "logMemory": true,
+  "echoConfig": true,
+  "log" : {
+    "trace": true,
+    "debug": true
+  },
+  "mqtt": {
+    "trace": true
+  },
+  "traceValidator": true
+}

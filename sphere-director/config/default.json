@@ -1,0 +1,5 @@
+{
+  "director": {
+    "module_paths": ["/opt/sphere", "/opt/sphere-drivers"]
+  }
+}
