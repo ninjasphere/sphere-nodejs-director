@@ -84,14 +84,14 @@ function addIfExists(path) {
 }
 
 // sphere-common default config
-addIfExists(path.join(__dirname, '..', 'config', 'default.json'));
+addIfExists(path.join(__dirname, '..', '..', 'config', 'default.json'));
 
 // sphere-common credentials config
-addIfExists(path.join(__dirname, '..', 'config', 'credentials.json'));
+addIfExists(path.join(__dirname, '..', '..', 'config', 'credentials.json'));
 
 // sphere-common environment(s) config
 env.forEach(function(e){
-  addIfExists(path.join(__dirname, '..', 'config', e + '.json'));
+  addIfExists(path.join(__dirname, '..', '..', 'config', e + '.json'));
 });
 
 // current module default config
