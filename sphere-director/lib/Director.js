@@ -24,21 +24,21 @@ function Director() {
       Ninja.config.director.module_paths.join(', '), this.modulePaths.join(', '));
   }
 
-  bus.subscribe(Ninja.topics.module.start, function onStartModule(topic, name) {
+  bus.subscribe(Ninja.topics.module.start.node(Ninja.nodeId), function onStartModule(topic, name) {
     log.info('Start', name.yellow, 'requested via mqtt');
     this.startModule(name);
   }.bind(this));
 
-  bus.subscribe(Ninja.topics.module.stop, function onStopModule(topic, name) {
+  bus.subscribe(Ninja.topics.module.stop.node(Ninja.nodeId), function onStopModule(topic, name) {
     log.info('Stop', name.yellow, 'requested via mqtt');
     this.stopModule(name);
   }.bind(this));
 
-  bus.subscribe(Ninja.topics.site.change, function() {
+  /*bus.subscribe(Ninja.topics.site.change, function() {
     setTimeout(function() {
       this.announceAvailableModules();
     }.bind(this), 2000); // UUURGH FIXME!
-  }.bind(this));
+  }.bind(this));*/
 
   this.processes = {};
 
