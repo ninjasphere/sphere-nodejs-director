@@ -1,5 +1,5 @@
 {
   "director": {
-    "module_paths": ["/opt/sphere", "/opt/sphere-drivers"]
+    "module_paths": ["/opt/ninjablocks", "/opt/ninjablocks/drivers", "/opt/ninjablocks/apps", "/data/sphere/user-autostart/drivers", "/data/sphere/user-autostart/apps"]
   }
 }
