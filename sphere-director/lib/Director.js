@@ -189,8 +189,12 @@ Director.prototype.startModule = function(name, startTime, attempt) {
     var delay = 0;
 
     if (attempt > 1) {
-      delay = Math.pow(1.5, attempt) * 1000;
-      delay = Math.min(240000, delay); // Maximum delay 240sec (about 14 attempts)
+      currentTime = new Date().getTime();  	
+      if((startTime - currentTime)/attempt < 120000)  //average up time is < 2 minutes - Houston we have a problem)  	
+      {
+          delay = Math.pow(1.5, attempt) * 1000;
+          delay = Math.min(240000, delay); // Maximum delay 240sec (about 14 attempts)
+      } 
 
       this.log.info('Module', name.yellow, 'has died', (attempt+'').green, 'times. Delaying restart by ', (delay+'').yellow,'ms');
     }
