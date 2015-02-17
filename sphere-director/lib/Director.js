@@ -189,7 +189,7 @@ Director.prototype.startModule = function(name, startTime, attempt) {
     var delay = 0;
 
     if (attempt > 1) {
-      currentTime = new Date().getTime();  	
+      var currentTime = new Date().getTime();  	
       if((currentTime - startTime)/attempt < 120000)  //average up time is < 2 minutes - Houston we have a problem)  	
       {
           delay = Math.pow(1.5, attempt) * 1000;
