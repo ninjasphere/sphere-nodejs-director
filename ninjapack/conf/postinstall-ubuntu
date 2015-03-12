@@ -1,3 +1,14 @@
 # DISABLED due to nodejs director killing children and not knowing to restart them later.
 # this is fixed in the go director so we don't really care.
 #service sphere-director restart || true
+
+if ! /opt/ninjablocks/bin/sphere-role is-slave >/dev/null; then
+	#
+	# we won't restart here, because of the aforementioned problem, however,
+	# we will start if we have installed sphere-director for the first time.
+	#
+	# this is required to deal with the first setup case following a factory
+	# reset otherwise the user needs to manually reboot the sphere.
+	#
+	service sphere-director start || true
+fi
