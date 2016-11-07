@@ -10,5 +10,5 @@ if ! /opt/ninjablocks/bin/sphere-role is-slave >/dev/null; then
 	# this is required to deal with the first setup case following a factory
 	# reset otherwise the user needs to manually reboot the sphere.
 	#
-	systemctl sphere-director start || true
+	service sphere-director start || true
 fi
