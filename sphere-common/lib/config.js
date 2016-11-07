@@ -102,8 +102,8 @@ env.forEach(function(e){
   addIfExists(path.join(process.cwd(), 'config', e + '.json'));
 });
 
-uh = getUserHome()
-if uh {
+var uh = getUserHome()
+if (uh) {
   // home directory default config
   addIfExists(path.join(getUserHome(), '.sphere', 'default.json'));
 
