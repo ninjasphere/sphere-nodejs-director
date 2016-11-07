@@ -102,13 +102,16 @@ env.forEach(function(e){
   addIfExists(path.join(process.cwd(), 'config', e + '.json'));
 });
 
-// home directory default config
-addIfExists(path.join(getUserHome(), '.sphere', 'default.json'));
+uh = getUserHome()
+if uh {
+  // home directory default config
+  addIfExists(path.join(getUserHome(), '.sphere', 'default.json'));
 
-// home directory environment(s) config
-env.forEach(function(e){
-  addIfExists(path.join(getUserHome(), '.sphere', e + '.json'));
-});
+  // home directory environment(s) config
+  env.forEach(function(e){
+    addIfExists(path.join(getUserHome(), '.sphere', e + '.json'));
+  });
+}
 
 // credentials file
 addIfExists(path.join('/','etc', 'opt', 'ninja', 'credentials.json'));
