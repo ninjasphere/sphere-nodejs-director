@@ -1,3 +1,5 @@
+systemctl enable sphere-director
+
 # DISABLED due to nodejs director killing children and not knowing to restart them later.
 # this is fixed in the go director so we don't really care.
 #service sphere-director restart || true
