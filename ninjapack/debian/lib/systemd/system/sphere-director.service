@@ -3,7 +3,7 @@ Description=NinjaBlocks Sphere Director Service
 After=network.target 
 
 [Service]
-ExecStart=/bin/bash -c '. /etc/profile && cd /opt/ninjablocks/sphere-director && exec /usr/bin/node -- /opt/ninjablocks/sphere-director/run.js --mqtt.trace false --credentialFile /data/etc/opt/ninja/credentials.json --boardType "$${NINJA_BOARD_TYPE}"'
+ExecStart=/bin/bash -c '. /etc/profile && cd /opt/ninjablocks/sphere-director && exec /usr/bin/node -- /opt/ninjablocks/sphere-director/run.js --mqtt.trace false --credentialFile /data/etc/opt/ninja/credentials.json --boardType "$${NINJA_BOARD_TYPE}" --nodeId "$(sphere-serial)"' 
 KillMode=process
 Restart=on-failure
 
